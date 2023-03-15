@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flight Data</title>
+</head>
+<body>
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+    <h1>Flight Board</h1>
+    <table>
+        <tr>
+            <th>Airline</th>
+            <th>Destination</th>
+            <th>DepartureTime</th>
+            <th>Gate</th>
+        </tr>
+
+        
+    {% for i in data %}
+        <tr>
+        <td>{{ i.Airline }}</td>
+        <td>{{ i.Destination }}</td>
+        <td>{{ i.DepartureTime }}</td>
+        <td>{{ i.Gate }}</td>
+        </tr>
+    {% endfor %}
+        
+</body>
+</html>
