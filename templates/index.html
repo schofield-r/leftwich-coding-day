@@ -1,31 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Flight Data</title>
-</head>
-<body>
-    <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-        <div id="myDropdown" class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-        </div>
-      </div>
-    <h1>Pets</h1>
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Pets Name</th>
-        </tr>
+    <head>
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='styles.css') }}"
+        />
 
-        
-    {% for i in data %}
-        <tr>
-        <td>{{ i.user }}</td>
-        <td>{{ i.PetsName }}</td>
-        </tr>
-    {% endfor %}
-        
-</body>
+        <title>Flight Data</title>
+    </head>
+    <body>
+        <div class="dropdown">
+            <button
+                onclick="document.getElementById('myDropdown').classList.toggle('show');"
+                class="dropbtn"
+            >
+                Dropdown
+            </button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="pets">Pets</a>
+                <a href="">Link 2</a>
+                <a href="">Link 3</a>
+            </div>
+        </div>
+        <!-- HTML CODE FOR TABLE GOES HERE -->
+    </body>
 </html>
