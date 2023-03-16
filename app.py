@@ -1,27 +1,33 @@
-import json
-from flask import Flask, render_template, send_file
-
+from flask import Flask, render_template
+import requests
 
 app = Flask(__name__)
 
-
 @app.route("/")
 def index():
-
-    # Your code for fetching the data goes here
-
-    # Renders the html and can insert the data with a second argument 'data='
-    return render_template("index.html")
+    # Retrieve data from API
+    response = requests.get('https://manchester-airport-flights.netlify.app')
+    data = response.json()
 
 
-@app.route("/pets")
-def pets():
+    # Render data in HTML template
+    return render_template("index.html",data=data)
+
+@app.route("/filter/<airline>")
+def filtered(airline):
+    print()
     # Example of data being rendered in html
-    data_list = [{"user": "Alex", "pets_name": "Fish"}, {
-        "user": "Faz", "pets_name": "Kitty"}, {"user": "Rhiannon", "pets_name": "Rosie"}]
+    response = requests.get('https://manchester-airport-flights.netlify.app')
+    data = response.json()
 
-    return render_template("petsExample.html", data=data_list)
+    filtered_data = []
 
+    for i in data:
+        if i['Airline'] == airline:
+            filtered_data.append(i)
+
+
+    return render_template("index.html", data=filtered_data)
 
 if __name__ == "__main__":
     app.run()

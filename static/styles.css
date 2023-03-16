@@ -1,3 +1,7 @@
+body{
+    background-color: white;
+}
+
 /* Dropdown Button */
 .dropbtn {
     background-color: #3498db;
@@ -46,4 +50,33 @@
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {
     display: block;
+}
+
+table{margin:10px}
+
+
+ table, th, td {
+  border:2px solid black;
+  border-collapse: collapse;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #D6EEEE;
 }

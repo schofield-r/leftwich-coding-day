@@ -1,27 +1,44 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link
-            rel="stylesheet"
-            href="{{ url_for('static', filename='styles.css') }}"
-        />
+<head>
+    <title>Flight Data</title>
+</head>
+<body><div class="row">
+    <div class="column"><img src="{{ url_for('static', filename='plane.jfif') }}" alt="plane" width="100" height="100"></div>
+    <div class="column"> <h1 style="text-align:center;">Flight Board</h1></div>
+    <div class="column"><img src="{{ url_for('static', filename='plane.jfif') }}" alt="plane" width="100" height="100"></div>
+  </div>
 
-        <title>Flight Data</title>
-    </head>
-    <body>
-        <div class="dropdown">
-            <button
-                onclick="document.getElementById('myDropdown').classList.toggle('show');"
-                class="dropbtn"
-            >
-                Dropdown
-            </button>
-            <div id="myDropdown" class="dropdown-content">
-                <a href="pets">Pets</a>
-                <a href="">Link 2</a>
-                <a href="">Link 3</a>
-            </div>
-        </div>
-        <!-- HTML CODE FOR TABLE GOES HERE -->
-    </body>
-</html>
+  <div class="dropdown">
+    <button
+        onclick="document.getElementById('myDropdown').classList.toggle('show');"
+        class="dropbtn">
+        Dropdown
+    </button>
+    <div id="myDropdown" class="dropdown-content">
+        <a href="/filter/British Airways">British Airways</a>
+        <a href="/filter/Ryanair">Ryanair</a>
+        <a href="/filter/Easy Jet">Easy Jet</a>
+    </div> 
+<div>
+
+    <table style="width:100%" >
+        <tr>
+            <th>Airline</th>
+            <th>Destination</th>
+            <th>DepartureTime</th>
+            <th>Gate</th>
+        </tr>
+
+        
+    {% for i in data %}
+        <tr>
+        <td>{{ i.Airline }}</td>
+        <td>{{ i.Destination }}</td>
+        <td>{{ i.DepartureTime }}</td>
+        <td>{{ i.Gate }}</td>
+        </tr>
+    {% endfor %}
+</table>
+</div>
+</body>
+</html
