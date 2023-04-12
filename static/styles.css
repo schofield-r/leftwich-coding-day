@@ -1,49 +1,39 @@
-/* Dropdown Button */
-.dropbtn {
-    background-color: #3498db;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
+body {
+    background-color: white;
 }
 
-/* Dropdown button on hover & focus */
-.dropbtn:hover,
-.dropbtn:focus {
-    background-color: #2980b9;
+table {
+    margin: 10px;
 }
 
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: relative;
-    display: inline-block;
+/* You can specify multiple HTML tags you want to apply the styling to */
+table,
+th,
+td {
+    border: 2px solid black;
+    border-collapse: collapse;
 }
 
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+/* The '.' in from of 'column' tells us this is a class name 
+(for more information check out this guide -> https://www.w3schools.com/cssref/sel_class.php) */
+.column {
+    float: left;
+    width: 33.33%;
 }
 
-/* Links inside the dropdown */
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+/* Clear floats after the columns */
+.row:after {
+    content: '';
+    display: table;
+    clear: both;
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-    background-color: #ddd;
+th,
+td {
+    text-align: left;
+    padding: 8px;
 }
 
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {
-    display: block;
+tr:nth-child(even) {
+    background-color: #d6eeee;
 }

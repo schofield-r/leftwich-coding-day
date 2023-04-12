@@ -8,17 +8,32 @@
         <title>Pets example</title>
     </head>
     <body>
+        <div class="dropdown">
+            <button
+                onclick="document.getElementById('myDropdown').classList.toggle('show');"
+                class="dropbtn"
+            >
+                Filter by animal
+            </button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="/filter/cat">Cat</a>
+                <a href="/filter/fish">Fish</a>
+                <a href="/filter/dog">Dog</a>
+            </div>
+        </div>
         <h1>Pets</h1>
         <table>
             <tr>
                 <th>Name</th>
                 <th>Pets Name</th>
+                <th>Animal</th>
             </tr>
 
             {% for i in data %}
             <tr>
                 <td>{{ i.user }}</td>
                 <td>{{ i.pets_name }}</td>
+                <td>{{ i.animal }}</td>
             </tr>
             {% endfor %}
         </table>
